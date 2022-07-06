@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 class NameInputField extends StatelessWidget {
   /// Creates a new instance of [NameInputField].
@@ -15,8 +16,11 @@ class NameInputField extends StatelessWidget {
       controller: controller,
       decoration: const InputDecoration(
         border: OutlineInputBorder(),
-        labelText: 'John Doe',
+        labelText: 'Your name',
       ),
+      inputFormatters: [
+        FilteringTextInputFormatter.allow(RegExp('[a-zA-Z-]')),
+      ],
     );
   }
 }
