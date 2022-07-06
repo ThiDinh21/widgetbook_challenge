@@ -19,7 +19,7 @@ class NameInputField extends StatelessWidget {
         labelText: 'Your name',
       ),
       inputFormatters: [
-        FilteringTextInputFormatter.allow(RegExp('[a-zA-Z-]')),
+        FilteringTextInputFormatter.allow(RegExp('[a-zA-Z- ]')),
       ],
     );
   }
