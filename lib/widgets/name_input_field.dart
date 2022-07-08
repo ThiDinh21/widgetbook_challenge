@@ -14,9 +14,13 @@ class NameInputField extends StatelessWidget {
   Widget build(BuildContext context) {
     return TextField(
       controller: controller,
-      decoration: const InputDecoration(
-        border: OutlineInputBorder(),
+      decoration: InputDecoration(
+        border: const OutlineInputBorder(),
         labelText: 'Your name',
+        suffixIcon: IconButton(
+          onPressed: controller.clear,
+          icon: const Icon(Icons.clear),
+        ),
       ),
       inputFormatters: [
         FilteringTextInputFormatter.allow(RegExp('[a-zA-Z- ]')),
