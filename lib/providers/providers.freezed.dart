@@ -15,7 +15,7 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
-mixin _$ApiState {
+mixin _$GreetingApiState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
@@ -69,18 +69,20 @@ mixin _$ApiState {
 }
 
 /// @nodoc
-abstract class $ApiStateCopyWith<$Res> {
-  factory $ApiStateCopyWith(ApiState value, $Res Function(ApiState) then) =
-      _$ApiStateCopyWithImpl<$Res>;
+abstract class $GreetingApiStateCopyWith<$Res> {
+  factory $GreetingApiStateCopyWith(
+          GreetingApiState value, $Res Function(GreetingApiState) then) =
+      _$GreetingApiStateCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$ApiStateCopyWithImpl<$Res> implements $ApiStateCopyWith<$Res> {
-  _$ApiStateCopyWithImpl(this._value, this._then);
+class _$GreetingApiStateCopyWithImpl<$Res>
+    implements $GreetingApiStateCopyWith<$Res> {
+  _$GreetingApiStateCopyWithImpl(this._value, this._then);
 
-  final ApiState _value;
+  final GreetingApiState _value;
   // ignore: unused_field
-  final $Res Function(ApiState) _then;
+  final $Res Function(GreetingApiState) _then;
 }
 
 /// @nodoc
@@ -91,7 +93,8 @@ abstract class _$$_InitialCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_InitialCopyWithImpl<$Res> extends _$ApiStateCopyWithImpl<$Res>
+class __$$_InitialCopyWithImpl<$Res>
+    extends _$GreetingApiStateCopyWithImpl<$Res>
     implements _$$_InitialCopyWith<$Res> {
   __$$_InitialCopyWithImpl(_$_Initial _value, $Res Function(_$_Initial) _then)
       : super(_value, (v) => _then(v as _$_Initial));
@@ -107,7 +110,7 @@ class _$_Initial implements _Initial {
 
   @override
   String toString() {
-    return 'ApiState.initial()';
+    return 'GreetingApiState.initial()';
   }
 
   @override
@@ -194,7 +197,7 @@ class _$_Initial implements _Initial {
   }
 }
 
-abstract class _Initial implements ApiState {
+abstract class _Initial implements GreetingApiState {
   const factory _Initial() = _$_Initial;
 }
 
@@ -206,7 +209,8 @@ abstract class _$$_LoadingCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_LoadingCopyWithImpl<$Res> extends _$ApiStateCopyWithImpl<$Res>
+class __$$_LoadingCopyWithImpl<$Res>
+    extends _$GreetingApiStateCopyWithImpl<$Res>
     implements _$$_LoadingCopyWith<$Res> {
   __$$_LoadingCopyWithImpl(_$_Loading _value, $Res Function(_$_Loading) _then)
       : super(_value, (v) => _then(v as _$_Loading));
@@ -222,7 +226,7 @@ class _$_Loading implements _Loading {
 
   @override
   String toString() {
-    return 'ApiState.loading()';
+    return 'GreetingApiState.loading()';
   }
 
   @override
@@ -309,7 +313,7 @@ class _$_Loading implements _Loading {
   }
 }
 
-abstract class _Loading implements ApiState {
+abstract class _Loading implements GreetingApiState {
   const factory _Loading() = _$_Loading;
 }
 
@@ -322,7 +326,8 @@ abstract class _$$_SuccessCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_SuccessCopyWithImpl<$Res> extends _$ApiStateCopyWithImpl<$Res>
+class __$$_SuccessCopyWithImpl<$Res>
+    extends _$GreetingApiStateCopyWithImpl<$Res>
     implements _$$_SuccessCopyWith<$Res> {
   __$$_SuccessCopyWithImpl(_$_Success _value, $Res Function(_$_Success) _then)
       : super(_value, (v) => _then(v as _$_Success));
@@ -353,7 +358,7 @@ class _$_Success implements _Success {
 
   @override
   String toString() {
-    return 'ApiState.success(msg: $msg)';
+    return 'GreetingApiState.success(msg: $msg)';
   }
 
   @override
@@ -448,7 +453,7 @@ class _$_Success implements _Success {
   }
 }
 
-abstract class _Success implements ApiState {
+abstract class _Success implements GreetingApiState {
   const factory _Success(final String msg) = _$_Success;
 
   String get msg;
@@ -465,7 +470,7 @@ abstract class _$$_ErrorCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_ErrorCopyWithImpl<$Res> extends _$ApiStateCopyWithImpl<$Res>
+class __$$_ErrorCopyWithImpl<$Res> extends _$GreetingApiStateCopyWithImpl<$Res>
     implements _$$_ErrorCopyWith<$Res> {
   __$$_ErrorCopyWithImpl(_$_Error _value, $Res Function(_$_Error) _then)
       : super(_value, (v) => _then(v as _$_Error));
@@ -496,7 +501,7 @@ class _$_Error implements _Error {
 
   @override
   String toString() {
-    return 'ApiState.error(errorMsg: $errorMsg)';
+    return 'GreetingApiState.error(errorMsg: $errorMsg)';
   }
 
   @override
@@ -591,7 +596,7 @@ class _$_Error implements _Error {
   }
 }
 
-abstract class _Error implements ApiState {
+abstract class _Error implements GreetingApiState {
   const factory _Error(final String errorMsg) = _$_Error;
 
   String get errorMsg;

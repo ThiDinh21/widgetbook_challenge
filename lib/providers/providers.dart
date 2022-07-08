@@ -4,33 +4,39 @@ import 'package:widgetbook_challenge/api/widgetbook_api.dart';
 
 part 'providers.freezed.dart';
 
+final widgetbookApiProvider = Provider<WidgetbookApi>(
+  (ref) => WidgetbookApi(),
+);
+
 @freezed
-class ApiState with _$ApiState {
-  const factory ApiState.initial() = _Initial;
-  const factory ApiState.loading() = _Loading;
-  const factory ApiState.success(String msg) = _Success;
-  const factory ApiState.error(String errorMsg) = _Error;
+class GreetingApiState with _$GreetingApiState {
+  const factory GreetingApiState.initial() = _Initial;
+  const factory GreetingApiState.loading() = _Loading;
+  const factory GreetingApiState.success(String msg) = _Success;
+  const factory GreetingApiState.error(String errorMsg) = _Error;
 }
 
-class ApiStateNotifier extends StateNotifier<ApiState> {
-  ApiStateNotifier(this.api) : super(const ApiState.initial());
+class GreetingApiStateNotifier extends StateNotifier<GreetingApiState> {
+  GreetingApiStateNotifier(this.api) : super(const GreetingApiState.initial());
 
   final WidgetbookApi api;
 
   Future<void> submitUsername(String username) async {
-    state = const ApiState.loading();
+    state = const GreetingApiState.loading();
     try {
       final msg = await api.welcomeToWidgetbook(message: username);
-      state = ApiState.success(msg);
+      state = GreetingApiState.success(msg);
     } catch (e) {
       const errorMsg = 'An unexpected error has occurred. Please try again';
-      state = const ApiState.error(errorMsg);
+      state = const GreetingApiState.error(errorMsg);
     }
   }
 }
 
-final apiProvider = StateNotifierProvider<ApiStateNotifier, ApiState>(
+final greetingApiProvider =
+    StateNotifierProvider<GreetingApiStateNotifier, GreetingApiState>(
   (ref) {
-    return ApiStateNotifier(WidgetbookApi());
+    final widgetbookApi = ref.watch(widgetbookApiProvider);
+    return GreetingApiStateNotifier(widgetbookApi);
   },
 );

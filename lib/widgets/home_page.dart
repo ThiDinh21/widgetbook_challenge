@@ -24,7 +24,7 @@ class _HomePageState extends ConsumerState<HomePage> {
 
   @override
   Widget build(BuildContext context) {
-    final apiState = ref.watch(apiProvider);
+    final apiState = ref.watch(greetingApiProvider);
 
     return Scaffold(
       appBar: AppBar(
@@ -40,7 +40,7 @@ class _HomePageState extends ConsumerState<HomePage> {
             ElevatedButton(
               onPressed: () {
                 ref
-                    .read(apiProvider.notifier)
+                    .read(greetingApiProvider.notifier)
                     .submitUsername(_controller.text.trim());
               },
               child: const Text('Submit'),
