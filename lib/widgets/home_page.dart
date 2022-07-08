@@ -3,14 +3,27 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:widgetbook_challenge/providers/providers.dart';
 import 'package:widgetbook_challenge/widgets/name_input_field.dart';
 
-class HomePage extends ConsumerWidget {
+class HomePage extends ConsumerStatefulWidget {
   /// Creates a new instance of [HomePage].
   const HomePage({
     Key? key,
   }) : super(key: key);
 
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
+  ConsumerState<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends ConsumerState<HomePage> {
+  late TextEditingController _controller;
+
+  @override
+  void initState() {
+    _controller = TextEditingController();
+    super.initState();
+  }
+
+  @override
+  Widget build(BuildContext context) {
     final apiState = ref.watch(apiProvider);
 
     return Scaffold(
@@ -22,18 +35,21 @@ class HomePage extends ConsumerWidget {
         child: Column(
           children: [
             NameInputField(
-              controller: TextEditingController(),
+              controller: _controller,
             ),
             ElevatedButton(
               onPressed: () {
-                ref.read(apiProvider.notifier).submitUsername('Lmao XD');
+                ref.read(apiProvider.notifier).submitUsername(_controller.text);
               },
               child: const Text('Submit'),
             ),
             apiState.map(
               initial: (_) => const SizedBox(),
               loading: (_) => const CircularProgressIndicator(),
-              success: (state) => Text(state.msg),
+              success: (state) {
+                _controller.clear();
+                return Text(state.msg);
+              },
               error: (state) => Text(state.errorMsg),
             ),
           ],
