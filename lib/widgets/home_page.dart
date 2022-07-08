@@ -3,6 +3,8 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:widgetbook_challenge/providers/providers.dart';
 import 'package:widgetbook_challenge/widgets/name_input_field.dart';
 
+/// The app's only page, contains the text input field, submit button and
+/// an area that displays result message from the API
 class HomePage extends ConsumerStatefulWidget {
   /// Creates a new instance of [HomePage].
   const HomePage({

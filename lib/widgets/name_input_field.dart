@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
+/// An input text field that only accept characters from a to z, A to Z,
+/// dashes("-") and spaces(" ")
 class NameInputField extends StatelessWidget {
   /// Creates a new instance of [NameInputField].
   const NameInputField({
@@ -8,6 +10,7 @@ class NameInputField extends StatelessWidget {
     required this.controller,
   }) : super(key: key);
 
+  /// Controller to access and modify the text field from parent widgets
   final TextEditingController controller;
 
   @override
