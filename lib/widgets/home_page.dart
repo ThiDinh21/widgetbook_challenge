@@ -39,7 +39,9 @@ class _HomePageState extends ConsumerState<HomePage> {
             ),
             ElevatedButton(
               onPressed: () {
-                ref.read(apiProvider.notifier).submitUsername(_controller.text);
+                ref
+                    .read(apiProvider.notifier)
+                    .submitUsername(_controller.text.trim());
               },
               child: const Text('Submit'),
             ),
