@@ -2,6 +2,7 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:widgetbook_challenge/providers/providers.dart';
+import 'package:widgetbook_challenge/widgets/language_change_button.dart';
 import 'package:widgetbook_challenge/widgets/name_input_field.dart';
 
 /// The app's only page, contains the text input field, submit button and
@@ -32,6 +33,11 @@ class _HomePageState extends ConsumerState<HomePage> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('title').tr(),
+        actions: [
+          LanguageChangeButton(
+            appContext: context,
+          ),
+        ],
       ),
       body: Padding(
         padding: const EdgeInsets.all(20),
