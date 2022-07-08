@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -19,7 +20,7 @@ class NameInputField extends StatelessWidget {
       controller: controller,
       decoration: InputDecoration(
         border: const OutlineInputBorder(),
-        labelText: 'Your name',
+        labelText: tr('input_placeholder'),
         suffixIcon: IconButton(
           onPressed: controller.clear,
           icon: const Icon(Icons.clear),

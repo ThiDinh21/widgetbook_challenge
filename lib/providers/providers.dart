@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:widgetbook_challenge/api/widgetbook_api.dart';
@@ -41,8 +42,8 @@ class GreetingApiStateNotifier extends StateNotifier<GreetingApiState> {
   /// the input and how [WidgetbookApi] responses.
   Future<void> submitUsername(String username) async {
     if (username.isEmpty) {
-      const errorMsg = "Your name can't be empty!";
-      state = const GreetingApiState.error(errorMsg);
+      final errorMsg = tr('empty_str_error_msg');
+      state = GreetingApiState.error(errorMsg);
       return;
     }
 
@@ -51,8 +52,8 @@ class GreetingApiStateNotifier extends StateNotifier<GreetingApiState> {
       final msg = await api.welcomeToWidgetbook(message: username);
       state = GreetingApiState.success(msg);
     } catch (e) {
-      const errorMsg = 'An unexpected error has occurred. Please try again';
-      state = const GreetingApiState.error(errorMsg);
+      final errorMsg = tr('server_error_msg');
+      state = GreetingApiState.error(errorMsg);
     }
   }
 }

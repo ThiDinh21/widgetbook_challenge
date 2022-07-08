@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:widgetbook_challenge/providers/providers.dart';
@@ -30,7 +31,7 @@ class _HomePageState extends ConsumerState<HomePage> {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Interview Challenge'),
+        title: const Text('title').tr(),
       ),
       body: Padding(
         padding: const EdgeInsets.all(20),
@@ -45,7 +46,7 @@ class _HomePageState extends ConsumerState<HomePage> {
                     .read(greetingApiProvider.notifier)
                     .submitUsername(_controller.text.trim());
               },
-              child: const Text('Submit'),
+              child: const Text('submit').tr(),
             ),
             const SizedBox(height: 100),
             apiState.map(

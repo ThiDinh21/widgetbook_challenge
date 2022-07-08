@@ -1,0 +1,8 @@
+{
+	"title": "Interview Challenge",
+	"submit": "Submit",
+	"input_placeholder": "Your name",
+	"greetings": "",
+	"server_error_msg": "An unexpected error has occurred. Please try again.",
+	"empty_str_error_msg": "Your name can't be empty!"
+}

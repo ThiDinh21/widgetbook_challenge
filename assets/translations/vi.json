@@ -1,0 +1,8 @@
+{
+	"title": "Thử thách phỏng vấn",
+	"submit": "Nộp",
+	"input_placeholder": "Tên của bạn",
+	"greetings": "",
+	"server_error_msg": "Một lỗi bất ngờ đã xảy ra. Vui lòng thử lại sau.",
+	"empty_str_error_msg": "Tên bạn không được để trống!"
+}
