@@ -22,6 +22,12 @@ class GreetingApiStateNotifier extends StateNotifier<GreetingApiState> {
   final WidgetbookApi api;
 
   Future<void> submitUsername(String username) async {
+    if (username.isEmpty) {
+      const errorMsg = "Your name can't be empty!";
+      state = const GreetingApiState.error(errorMsg);
+      return;
+    }
+
     state = const GreetingApiState.loading();
     try {
       final msg = await api.welcomeToWidgetbook(message: username);
