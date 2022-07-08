@@ -3,13 +3,18 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:widgetbook_challenge/providers/providers.dart';
 
+/// An [IconButton] that takes [BuildContext], when pressed will show an
+/// [AlertDialog] which has the options to change the [Locale] of the app.
 class LanguageChangeButton extends ConsumerWidget {
-  LanguageChangeButton({
+  /// Create a new instance of LanguageChangeButton.
+  const LanguageChangeButton({
     Key? key,
     required this.appContext,
   }) : super(key: key);
 
-  BuildContext appContext;
+  /// Use the App's `context` so that the app rebuilds when
+  /// `appContext.setLocale()` is called.
+  final BuildContext appContext;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
