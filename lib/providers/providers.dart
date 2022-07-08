@@ -56,6 +56,11 @@ class GreetingApiStateNotifier extends StateNotifier<GreetingApiState> {
       state = GreetingApiState.error(errorMsg);
     }
   }
+
+  /// Reset the state back to initial.
+  void reset() {
+    state = const GreetingApiState.initial();
+  }
 }
 
 /// Provides an instance of [GreetingApiStateNotifier] to the whole app.

@@ -56,7 +56,10 @@ class _HomePageState extends ConsumerState<HomePage> {
             ),
             const SizedBox(height: 100),
             apiState.map(
-              initial: (_) => const SizedBox(),
+              initial: (_) {
+                _controller.clear();
+                return const SizedBox();
+              },
               loading: (_) => const CircularProgressIndicator(),
               success: (state) {
                 _controller.clear();

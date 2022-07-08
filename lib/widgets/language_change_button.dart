@@ -1,7 +1,9 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:widgetbook_challenge/providers/providers.dart';
 
-class LanguageChangeButton extends StatelessWidget {
+class LanguageChangeButton extends ConsumerWidget {
   LanguageChangeButton({
     Key? key,
     required this.appContext,
@@ -10,7 +12,7 @@ class LanguageChangeButton extends StatelessWidget {
   BuildContext appContext;
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     return IconButton(
       icon: const Icon(
         Icons.language,
@@ -31,6 +33,7 @@ class LanguageChangeButton extends StatelessWidget {
                       child: ElevatedButton(
                         onPressed: () {
                           appContext.setLocale(const Locale('en', 'US'));
+                          ref.read(greetingApiProvider.notifier).reset();
                           Navigator.of(context).pop();
                         },
                         child: Container(
@@ -45,6 +48,7 @@ class LanguageChangeButton extends StatelessWidget {
                       child: ElevatedButton(
                         onPressed: () {
                           appContext.setLocale(const Locale('vi'));
+                          ref.read(greetingApiProvider.notifier).reset();
                           Navigator.of(context).pop();
                         },
                         child: Container(
