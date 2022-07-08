@@ -45,6 +45,7 @@ class _HomePageState extends ConsumerState<HomePage> {
               },
               child: const Text('Submit'),
             ),
+            const SizedBox(height: 100),
             apiState.map(
               initial: (_) => const SizedBox(),
               loading: (_) => const CircularProgressIndicator(),
